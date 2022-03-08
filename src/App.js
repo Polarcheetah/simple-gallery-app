@@ -1,8 +1,11 @@
+import { Container } from 'react-bootstrap';
+import Gallery from './components/Gallery/Gallery';
+
 function App() {
   return (
-    <div className='App'>
-      <h1>Gallery App</h1>
-    </div>
+    <Container>
+      <Gallery />
+    </Container>
   );
 }
 
