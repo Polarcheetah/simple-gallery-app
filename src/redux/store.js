@@ -3,12 +3,6 @@ import thunk from 'redux-thunk';
 import { initialGalleryState, initialState } from './initialState';
 
 //selectors
-// export const getThreePhotos = (state,indexOfPhoto) => {
-//   const threePhotos = [];
-//   if (indexOfPhoto >= 0 && indexOfPhoto <= 2){
-//       threePhotos.push(state.photos.data[indexOfPhoto])
-//   }
-// };
 
 //actions
 const createActionName = (actionName) => `app/gallery/${actionName}`;

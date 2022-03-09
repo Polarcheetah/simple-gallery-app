@@ -1,0 +1,14 @@
+@import '../../styles/settings.scss';
+
+.gallery {
+  background: $color-dark;
+  color: $color-light;
+  min-height: 600px;
+  margin-top: 50px;
+}
+
+.header {
+  text-align: center;
+  //margin: 50px 0;
+  padding: 50px 0;
+}
