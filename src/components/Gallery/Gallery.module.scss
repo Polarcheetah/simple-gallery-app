@@ -1,14 +1,25 @@
 @import '../../styles/settings.scss';
 
 .gallery {
-  background: $color-dark;
-  color: $color-light;
+  // background: darken($color-dark, 10%);
   min-height: 600px;
   margin-top: 50px;
 }
 
 .header {
   text-align: center;
-  //margin: 50px 0;
-  padding: 50px 0;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  margin-bottom: 150px;
+  position: relative;
+}
+.header::after {
+  position: absolute;
+  content: '';
+  bottom: 0px;
+  left: 50%;
+  width: 150px;
+  height: 7px;
+  transform: translateX(-50%);
+  background: $color-main;
 }

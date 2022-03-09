@@ -37,7 +37,7 @@ const Gallery = () => {
       {loading && <p>Loading...</p>}
       {!loading && !error && filteredPhotos?.length > 0 && (
         <Container>
-          <Row>
+          <Row sm={1} md={3}>
             {filteredPhotos.map((photo) => (
               <Col key={shortid()}>
                 <Photo photoData={photo} />
