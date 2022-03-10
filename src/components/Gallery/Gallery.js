@@ -36,7 +36,6 @@ const Gallery = () => {
   }, [photos, startIndex, endIndex]);
 
   const handleNext = (e) => {
-    console.log('button clicked');
     e.preventDefault();
     if (endIndex < photos.length - 1) {
       setStartIndex(startIndex + 3);
@@ -45,8 +44,6 @@ const Gallery = () => {
       setStartIndex(0);
       setEndIndex(2);
     }
-    console.log('startIndex', startIndex);
-    console.log('endIndex', endIndex);
   };
 
   return (
