@@ -9,7 +9,7 @@ const Photo = ({ photoData }) => {
         src={`http://source.unsplash.com/${url}`}
         alt={`author: ${author}`}
       />
-      <p>{author}</p>
+      <p className={styles.author}>{author}</p>
     </div>
   );
 };

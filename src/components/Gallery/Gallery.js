@@ -4,6 +4,7 @@ import { fetchPhotos } from '../../redux/store';
 import { Row, Col, Container } from 'react-bootstrap';
 import Photo from '../Photo/Photo';
 import { createFilteredArray } from '../../utils/createFilteredArray';
+import Button from '../../components/Button/Button';
 import shortid from 'shortid';
 import styles from './Gallery.module.scss';
 
@@ -20,8 +21,10 @@ const Gallery = () => {
 
   //create array with filtered photos
 
-  let startIndex = 0;
-  let endIndex = 2;
+  //let startIndex = 0;
+  //let endIndex = 2;
+  const [startIndex, setStartIndex] = useState(0);
+  const [endIndex, setEndIndex] = useState(2);
   const [filteredPhotos, setFilteredPhotos] = useState([]);
 
   useEffect(() => {
@@ -29,7 +32,22 @@ const Gallery = () => {
       const filteredArray = createFilteredArray(photos, startIndex, endIndex);
       setFilteredPhotos(filteredArray);
     }
+    //console.log('filteredPhotos', filteredPhotos);
   }, [photos, startIndex, endIndex]);
+
+  const handleNext = (e) => {
+    console.log('button clicked');
+    e.preventDefault();
+    if (endIndex < photos.length - 1) {
+      setStartIndex(startIndex + 3);
+      setEndIndex(endIndex + 3);
+    } else {
+      setStartIndex(0);
+      setEndIndex(2);
+    }
+    console.log('startIndex', startIndex);
+    console.log('endIndex', endIndex);
+  };
 
   return (
     <div className={styles.gallery}>
@@ -43,6 +61,11 @@ const Gallery = () => {
                 <Photo photoData={photo} />
               </Col>
             ))}
+          </Row>
+          <Row>
+            <Col className='d-flex justify-content-center'>
+              <Button onClick={handleNext}>Next</Button>
+            </Col>
           </Row>
         </Container>
       )}

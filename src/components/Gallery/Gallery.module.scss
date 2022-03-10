@@ -12,14 +12,15 @@
   padding-bottom: 20px;
   margin-bottom: 150px;
   position: relative;
-}
-.header::after {
-  position: absolute;
-  content: '';
-  bottom: 0px;
-  left: 50%;
-  width: 150px;
-  height: 7px;
-  transform: translateX(-50%);
-  background: $color-main;
+
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 0px;
+    left: 50%;
+    width: 150px;
+    height: 7px;
+    transform: translateX(-50%);
+    background: $color-main;
+  }
 }
